@@ -26,4 +26,10 @@ public class HelloWorld {
         map.put("users",Arrays.asList("Juniors","Harden","Kobe"));
         return "success";
     }
+
+    @RequestMapping("/crud")
+    public String login(){
+
+        return "index";
+    }
 }
