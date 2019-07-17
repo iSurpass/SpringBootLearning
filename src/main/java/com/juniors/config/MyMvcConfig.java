@@ -1,9 +1,9 @@
 package com.juniors.config;
 
+import com.juniors.component.LoginHandlerInterceptor;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.springframework.web.servlet.config.annotation.*;
 
 /**
  * 拓展Spring MVC 的功能
@@ -31,5 +31,13 @@ public class MyMvcConfig extends WebMvcConfigurationSupport {
 
         registry.addResourceHandler("/static/**")
                 .addRgesourceLocations("classpath:/static/");
+    }
+
+    // 注册拦截器
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        // 添加拦截的请求，并排除几个不拦截的请求
+        registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
+                .excludePathPatterns("/index.html", "/", "/user/login");
     }
 }
