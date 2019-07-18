@@ -22,5 +22,6 @@ spring:
     useGlobalDataSourceStat: true
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
     schema:
-      - classpath:department.sql
+      - classpath:sql/department.sql
+      - classpath:sql/employee.sql
     initialization-mode: always

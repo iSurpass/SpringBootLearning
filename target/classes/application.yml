@@ -4,6 +4,7 @@ spring:
     password: 123456
     url: jdbc:mysql://192.168.31.162:3306/jdbc
     driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
     initialSize: 5
     minIdle: 5
     maxActive: 20
@@ -21,5 +22,6 @@ spring:
     useGlobalDataSourceStat: true
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
     schema:
-      - classpath:department.sql
+      - classpath:sql/department.sql
+      - classpath:sql/employee.sql
     initialization-mode: always
