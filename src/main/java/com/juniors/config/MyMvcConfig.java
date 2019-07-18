@@ -15,7 +15,6 @@ public class MyMvcConfig extends WebMvcConfigurationSupport {
     @Override
     protected void addViewControllers(ViewControllerRegistry registry) {
         //super.addViewControllers(registry);
-
         registry.addViewController("/config").setViewName("success");
     }
 
@@ -36,8 +35,8 @@ public class MyMvcConfig extends WebMvcConfigurationSupport {
     // 注册拦截器
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        // 添加拦截的请求，并排除几个不拦截的请求
-        registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
-                .excludePathPatterns("/index.html", "/", "/user/login");
+//        // 添加拦截的请求，并排除几个不拦截的请求
+//        registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
+//                .excludePathPatterns("/index.html", "/", "/user/login","/jdbc");
     }
 }
