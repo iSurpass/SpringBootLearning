@@ -30,7 +30,7 @@ public class MyMvcConfig extends WebMvcConfigurationSupport {
 //       super.addResourceHandlers(registry);
 
         registry.addResourceHandler("/static/**")
-                .addRgesourceLocations("classpath:/static/");
+                .addResourceLocations("classpath:/static/");
     }
 
     // 注册拦截器
