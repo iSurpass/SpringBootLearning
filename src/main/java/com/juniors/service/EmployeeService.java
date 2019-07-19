@@ -24,7 +24,7 @@ public class EmployeeService {
      * @param id
      * @return
      */
-    @Cacheable(keyGenerator = "myKeyGenerator",value = {"emp"},key = "#id",condition = "#a0 > 1",unless = "#result == null ")
+    @Cacheable(value = {"emp"},key = "#id",condition = "#a0 > 1",unless = "#result == null ")
     public Employee getEmployee(Integer id){
 
         System.out.println("1111111");
@@ -38,7 +38,7 @@ public class EmployeeService {
      * @param employee
      * @return
      */
-    @CachePut(keyGenerator = "myKeyGenerator",value = {"emp"},key = "#result.id")
+    @CachePut(value = {"emp"},key = "#result.id")
     public Employee updateEmp(Employee employee){
 
         System.out.println("222222");
