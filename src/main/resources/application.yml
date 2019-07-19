@@ -25,3 +25,7 @@ spring:
       - classpath:sql/department.sql
       - classpath:sql/employee.sql
     initialization-mode: always
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
