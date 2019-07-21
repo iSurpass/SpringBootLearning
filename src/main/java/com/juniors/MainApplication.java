@@ -3,6 +3,7 @@ package com.juniors;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.cache.annotation.EnableCaching;
 
 /**
@@ -15,11 +16,11 @@ import org.springframework.cache.annotation.EnableCaching;
  */
 @EnableCaching
 @EnableRabbit
-public class MainApplication {
+public class MainApplication{
 
     public static void main(String[] args) {
 
-        //Spring 应用启动起来
         SpringApplication.run(MainApplication.class,args);
+
     }
 }

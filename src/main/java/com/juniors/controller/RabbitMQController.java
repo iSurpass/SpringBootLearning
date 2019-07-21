@@ -56,7 +56,7 @@ public class RabbitMQController {
         map.put("msg","这是第一个消息");
         map.put("data", Arrays.asList("hello,JuniorsMVP",123,true));
         //对象被默认序列化以后发送出去
-        rabbitTemplate.convertAndSend("exchange.direct","juniors.news",new Book("西游记","吴承恩"));
+        rabbitTemplate.convertAndSend("exchange.direct","juniors.news",new Book(1,"西游记","吴承恩"));
 
         //接收数据
         /*Object o = rabbitTemplate.receiveAndConvert("juniors.news");

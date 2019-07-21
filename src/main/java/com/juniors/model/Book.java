@@ -1,18 +1,19 @@
 package com.juniors.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.io.Serializable;
-import java.util.Date;
+import org.springframework.data.elasticsearch.annotations.Document;
 
 /**
  * @author Juniors
  */
 @Setter
 @Getter
+// ES 文档，索引（数据库），类型（表）
+@Document(indexName = "juniors",type = "employee")
 public class Book{
+
+    private Integer id;
 
     private String name;
 
@@ -32,8 +33,9 @@ public class Book{
         super();
     }
 
-    public Book(String name,String author){
+    public Book(Integer id,String name,String author){
 
+        this.id = id;
         this.name = name;
         this.author = author;
     }
