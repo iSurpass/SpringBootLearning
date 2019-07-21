@@ -19,6 +19,9 @@ public class MailService {
     @Autowired
     JavaMailSenderImpl mailSender;
 
+    /**
+     * 简单邮件
+     */
     public void sendMail(){
 
         SimpleMailMessage message = new SimpleMailMessage();
@@ -32,6 +35,10 @@ public class MailService {
         mailSender.send(message);
     }
 
+    /**
+     * 复杂邮件
+     * @throws MessagingException
+     */
     public void send() throws MessagingException {
 
         // 创建一个复杂的邮件
@@ -47,7 +54,7 @@ public class MailService {
         helper.setFrom("798051216@qq.com");
 
         // 上传文件
-        //helper.addAttachment("photo.jpg",new File("C:\\Users\\79805\\Pictures\\photo.jpg"));
+        helper.addAttachment("photo.jpg",new File("C:\\Users\\79805\\Pictures\\photo.jpg"));
 
         mailSender.send(mimeMessage);
 
