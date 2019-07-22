@@ -22,11 +22,20 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/level3/**").hasRole("VIP3");
 
         //开启自动配置的功能，效果，如果没有登录或权限就回来到默认 login 页面
-        http.formLogin();
-        /*.usernameParameter("user").passwordParameter("pwd")
-                .loginPage("/userlogin");*/
+        http.formLogin()
+        .usernameParameter("user").passwordParameter("pwd")
+                .loginPage("/userlogin");
 
+        //开启自动配置的注销功能
         http.logout().logoutUrl("/");
+        //1、访问 /logout 表示用户注销，立即清空 session
+        //2、注销成功会返回 /logout？logout
+
+        //开启记住我功能
+        http.rememberMe().rememberMeParameter("remeber");
+        //登录以后，将 cookie 发给浏览器保存一段时间，以后访问页面就会带上这个Cookie，
+        //只要通过检查就可以免登录
+        //点击注销会删除原有的 Cookie
 
     }
 
