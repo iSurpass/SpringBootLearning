@@ -18,6 +18,8 @@
         <project.bulid.sourceEncoding>UTF-8</project.bulid.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <thymeleaf-layout-dialect.version>2.3.0</thymeleaf-layout-dialect.version>
+        <thymeleaf-extras-springsecurity4.version>3.0.2.RELEASE</thymeleaf-extras-springsecurity4.version>
         <!--  <thymeleaf.version>3.0.9.RELEASE</thymeleaf.version>
         布局功能的支持程序 thymeleaf主程序 layout 2以上版本程序
         <thymeleaf-layout-dialect.version>2.2.2</thymeleaf-layout-dialect.version>-->
@@ -107,9 +109,22 @@
             <!--<version>2.4.0</version>-->
         <!--</dependency>-->
 
+        <!--邮箱服务-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+
+        <!--Spring Boot Security 安全框架-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <!--Thymeleaf Security 安全模板引擎-->
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity5</artifactId>
         </dependency>
 
     </dependencies>
